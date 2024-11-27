@@ -1,8 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 
 let users = [
-    { id: uuidv4(), name: "John Doe", email: "john.doe@example.com" },
-    { id: uuidv4(), name: "Jane Smith", email: "jane.smith@example.com" },
+    { id: uuidv4(), name: "Кирило", email: "litvishko.kirill@gmail.com" },
+    { id: uuidv4(), name: "Spefix", email: "hallo@spefix.com" },
+    { id: uuidv4(), name: "Вікторія", email: "viktiria@lnu.edu.ua" },
+    { id: uuidv4(), name: "Макс", email: "max@ukr.net" },
+    { id: uuidv4(), name: "Данило", email: "bebra@ukr.net" },
+    { id: uuidv4(), name: "Захар", email: "areshek@gmail.com" },
+    { id: uuidv4(), name: "Тарас", email: "tarasix@gmail.com" },
 ];
 
 
