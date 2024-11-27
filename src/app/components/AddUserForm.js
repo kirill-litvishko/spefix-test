@@ -40,7 +40,7 @@ export default function AddUserForm({ onAddUser }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            {error && <p>{error}</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
             <div>
                 <label>Ім'я:</label>
                 <input

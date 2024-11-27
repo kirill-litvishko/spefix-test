@@ -15,11 +15,20 @@ export async function GET(req) {
 export async function POST(req) {
     const body = await req.json();
 
+    const emailExists = users.some((user) => user.email === body.email);
+    if (emailExists) {
+        return new Response(JSON.stringify({ message: "Email вже існує." }), {
+            status: 400,
+            headers: { "Content-Type": "application/json" },
+        });
+    }
+
     const newUser = { id: uuidv4(), ...body };
     users.push(newUser);
     console.log(users);
 
     return new Response(JSON.stringify(newUser), {
+        status: 201,
         headers: { "Content-Type": "application/json" },
     });
 }
