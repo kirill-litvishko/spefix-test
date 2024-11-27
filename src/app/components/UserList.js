@@ -12,13 +12,17 @@ export default function UserList({ initialUsers }) {
 
     return (
         <div>
-            <ul>
-                {users.map((user) => (
-                    <li key={user.id}>
-                        {user.name} ({user.email})
-                    </li>
-                ))}
-            </ul>
+            {users.length > 0 ? (
+                <ul>
+                    {users.map((user) => (
+                        <li key={user.id}>
+                            {user.name} ({user.email})
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p>Користувачі не знайдені</p>
+            )}
             <AddUserForm onAddUser={addUser} />
         </div>
     );

@@ -14,7 +14,6 @@ export default async function HomePage() {
   } catch (error) {
     return (
       <main>
-        <h1>Список користувачів</h1>
         <p>Не вдалося завантажити дані: {error.message}</p>
       </main>
     );
