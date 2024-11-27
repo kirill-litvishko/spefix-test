@@ -1,22 +1,22 @@
-// app/page.js
-
+import { fetchUsers } from './utils/api';
 import UserList from './components/UserList';
 
 export default async function HomePage() {
-  const res = await fetch('http://localhost:3000/api/users', {
-    cache: 'no-store',
-  });
+  try {
+    const users = await fetchUsers();
 
-  if (!res.ok) {
-    throw new Error('Помилка при завантаженні користувачів');
+    return (
+      <main>
+        <h1>Список користувачів</h1>
+        <UserList initialUsers={users} />
+      </main>
+    );
+  } catch (error) {
+    return (
+      <main>
+        <h1>Список користувачів</h1>
+        <p>Не вдалося завантажити дані: {error.message}</p>
+      </main>
+    );
   }
-
-  const users = await res.json();
-
-  return (
-    <main>
-      <h1>Список користувачів</h1>
-      <UserList initialUsers={users} />
-    </main>
-  );
 }

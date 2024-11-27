@@ -1,5 +1,3 @@
-// app/components/UserList.js
-
 'use client';
 
 import { useState } from 'react';
