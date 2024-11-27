@@ -1,5 +1,5 @@
 export async function fetchUsers() {
-    const res = await fetch('/api/users', {
+    const res = await fetch(`${process.env.API_BASE_URL}/users`, {
         cache: 'no-store',
     });
 
