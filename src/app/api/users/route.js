@@ -18,7 +18,7 @@ export async function POST(req) {
     const emailExists = users.some((user) => user.email === body.email);
     if (emailExists) {
         return new Response(JSON.stringify({ message: "Email вже існує." }), {
-            status: 400,
+            status: 409,
             headers: { "Content-Type": "application/json" },
         });
     }
